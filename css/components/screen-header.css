@@ -1,0 +1,81 @@
+.screen-header {
+  display: flex;
+  color: #2f353e;
+  margin: 30px 0px 10px 0px;
+  justify-content: space-between;
+  padding: 25px var(--horizontal-space);
+  align-items: center;
+}
+
+.screen-header__title {
+  font-size: 29px;
+  font-weight: 550;
+}
+
+.screen-header__icons span {
+  margin-left: 25px;
+  position: relative;
+}
+
+.alt-header {
+  display: flex;
+  color: #2f353e;
+  margin: 30px 0px 10px 0px;
+  padding: 20px var(--horizontal-space);
+  align-items: center;
+  justify-content: center;
+}
+.alt-header__column:first-child {
+  margin-right: auto;
+}
+.alt-header__column:last-child {
+  margin-left: auto;
+}
+
+.alt-header__title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.chatting-header__column {
+  width: 33%;
+}
+.chatting-header__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+.chatting-header__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.chatting-header__column:last-child span {
+  margin-left: 25px;
+}
+.chatting-header {
+  top: 0;
+  padding-top: 15px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  background-color: #abc2d2;
+  z-index: 1;
+}
+#chatting-screen .status-bar {
+  z-index: 2;
+}
+/* z-index 는 포토샵 레이어와 같다 숫자가 큰 값을 줄 수록 맨 위쪽 레이어가 된다 */
+
+@keyframes rotateGear {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.screen-header__icons .fa-gear:hover {
+  animation: rotateGear 1s linear infinite;
+}

@@ -1,0 +1,22 @@
+.ellipsis-screen .icon-row {
+  margin-top: 40px;
+  padding: 0px 25px 0px 25px;
+}
+.ellipsis-screen .icon-row span {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.ellipsis-suggestions {
+  margin-top: 35px;
+  border-top: var(--main-border);
+  padding-top: 30px;
+}
+.ellipsis-suggestions__title {
+  margin-bottom: 30px;
+}
+
+.ellipsis-suggestions__img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}

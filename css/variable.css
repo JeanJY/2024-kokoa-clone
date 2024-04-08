@@ -1,0 +1,19 @@
+:root {
+  --brown: #3c1f1e;
+}
+:root {
+  --yellow: #fae100;
+}
+:root {
+  --font-grey: rgb(155, 155, 155);
+  --font-light-grey: rgb(207, 207, 207);
+}
+/* 루트의 정확한 쓰임새가 무엇인가? */
+
+:root {
+  --horizontal-space: 25px;
+}
+
+:root {
+  --main-border: 2px solid rgba(232, 232, 232, 0.784);
+}

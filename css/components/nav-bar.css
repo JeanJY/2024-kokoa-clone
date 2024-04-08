@@ -1,0 +1,94 @@
+/* 내가 처음에 니코랑 다른점 space-between 말고 space-around를 넣고 좌우 패딩은0 으로 함 
+바로 밑은 니코꺼
+- justify-content: space-around 는 웹 창을 옆으로 벌렸을때 양 옆의 빈공간의 사이즈가 달라진다
+상대적으로 설정하는 여백이 스페이스 어라운드라서 그런가보다 
+- box-sizing:border-box 의 의미는 "내가 padding을 넣어도 신경쓰지마 
+원래 내box 전체 사이즈를 늘리지 말아줘" */
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 50px;
+  box-sizing: border-box;
+  border-top: 2px solid rgba(232, 232, 232, 0.784);
+}
+.nav__ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 0px;
+  border-top: 2px solid rgba(232, 232, 232, 0.784);
+}
+
+.nav__ul {
+  display: flex;
+  justify-content: space-around;
+} */
+
+.nav__li {
+  color: #2f353e;
+  position: relative;
+}
+.nav__notification {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  animation: notificationAnimation 1.4s ease-in-out;
+}
+/* position: absolute 는 position: relavive의 가장가까운 parent 속성을 기준으로 적용 */
+
+@keyframes notificationAnimation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-6px) rotateY(180deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.nav__dot-notification {
+  color: #ff6329;
+  font-size: 37px;
+  position: absolute;
+  bottom: 22px;
+  left: 24px;
+  animation: notificationAnimation 1.4s ease-in-out infinite;
+}
+
+@keyframes appearListAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.nav__li {
+  transform: translateY(50px);
+  opacity: 0;
+  animation: appearListAnimation 0.9s ease-in-out forwards;
+}
+
+.nav__li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav__li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.nav__li:last-child {
+  animation-delay: 0.8s;
+}

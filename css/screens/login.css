@@ -1,0 +1,58 @@
+.welcome-header {
+  margin: 90px 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 웰컴헤더 이부분 정렬 하는게 어렵다.*/
+
+.welcome-header__title {
+  margin-bottom: 45px;
+  font-size: 25px;
+}
+.welcome-header__text {
+  width: 60%;
+  color: rgb(155, 155, 155);
+}
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 30px;
+}
+#login-form input {
+  border: none;
+  padding: 15px 0;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgb(207, 207, 207);
+  transition: border-color 0.3s ease-in-out;
+}
+/* not 안에 들어갈 내용이 맨위 전체 input에 공통적으로 있진 않은지
+  not 코드라인은 전체의 아래 그외에 적용될 라인 위에 적는 위치 기억 */
+
+#login-form input::placeholder {
+  color: rgb(155, 155, 155);
+}
+#login-form input:focus {
+  border-color: var(--brown);
+}
+/* 배리어블과 루트의 콜라보 이해가 필요 */
+
+#login-form input[type="submit"] {
+  background-color: var(--yellow);
+  cursor: pointer;
+  padding: 20px 0px;
+  border-radius: 4px;
+}
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+/* id로 쓴애들을 class로 했으면 어떨지 상상해보자
+  .login-form__input , .login-form__btn,.login-form__a */

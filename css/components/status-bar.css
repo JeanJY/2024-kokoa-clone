@@ -1,0 +1,39 @@
+.status-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 5px 5px;
+}
+/* 마진이 아니라 패딩 5,5을 주는 이유는? 마진으로 해도 눈으로 보이는 결과는 같았다. 
+;;지금은 큰 차이가 없고 개념만 이해했으면 된다*/
+.status-bar__column {
+  width: 33%;
+  color: #2f353e;
+}
+.status-bar__column:first-child span {
+  margin-right: 5px;
+}
+.status-bar__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  font-weight: 650;
+}
+.status-bar__column:nth-child(3) span {
+  margin-left: 10px;
+}
+.status-bar__column:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.status-bar__column .fa-battery-full {
+  margin: 0px 3px;
+}
+
+.chatting__status-bar {
+  background-color: #abc2d2;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,181 @@
+#chatting-screen {
+  background-color: #abc2d2;
+  height: 500vh;
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.main-chatting {
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.chat__time-stamp {
+  color: white;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 11px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+/* 왜 .main-chatting에 디스플레이 플렉스를 했더니 긴 박스가 내용물에 맞춰졌지? 
+To make things next to each other*/
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+}
+.message-row img {
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  margin-right: 10px;
+}
+.message__user {
+  color: rgb(107, 107, 107);
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: block;
+}
+.message__text {
+  display: flex;
+  align-items: flex-end;
+}
+
+.message__bubble {
+  background-color: white;
+  padding: 11px 13px;
+  font-size: 20px;
+  border-radius: 15px;
+  margin-right: 5px;
+  border-top-left-radius: 0px;
+}
+.message__time {
+  color: rgb(107, 107, 107);
+  font-size: 13px;
+}
+.message-row-mine {
+  justify-content: flex-end;
+}
+.message-row-mine .message__bubble {
+  background-color: var(--yellow);
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  margin-right: 0;
+  margin-left: 5px;
+}
+/* .message-row-mine .message__bubble {
+  order: 0;
+}
+.message-row-mine .message__time {
+  order: 1;
+} */
+
+/* order 로 순서를 바꾸는 것은 디스플레이 플렉스를 해놓은 부모(message-__text)요소의 칠드런(message__bubble or time) 요소에만 적용 할 수 있다. */
+.message-row-mine .message__text {
+  flex-direction: row-reverse;
+}
+
+.typing {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  align-items: center;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+.typing .typing__column:first-child {
+  width: 10%;
+}
+.typing .typing__column:last-child {
+  width: 90%;
+  position: relative;
+}
+.typing input {
+  padding: 13px;
+  width: 100%;
+  border: var(--main-border);
+  border-radius: 35px;
+  box-sizing: border-box;
+  transition: all, 0.3s ease-in-out;
+}
+.typing__column:last-child > i,
+.typing__column:last-child button {
+  position: absolute;
+  right: 3px;
+  top: 5px;
+}
+
+.typing__column:last-child > i {
+  right: 60px;
+  top: 22px;
+}
+.typing__column:last-child button {
+  background-color: var(--yellow);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.typing__column button:focus,
+.typing__column button:active {
+  outline: none;
+}
+
+.typing i {
+  color: var(--font-grey);
+}
+.typing__column button i {
+  color: inherit;
+}
+
+.typing .typing__column:first-child,
+.typing .fa-face-smile-beam,
+.typing button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.typing:focus-within .typing__column:first-child,
+.typing:focus-within .fa-face-smile-beam,
+.typing:focus-within button {
+  opacity: 0;
+}
+.typing:focus-within input {
+  width: 95vw;
+  transform: translateX(-12%) translateY(-80px);
+}
+
+.typing:focus-within {
+  transform: translateY(80px);
+}
+
+.message-2 {
+  transform: translateX(50vw);
+  animation: Message-2 0.7s ease-in-out forwards;
+}
+
+@keyframes Message-2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

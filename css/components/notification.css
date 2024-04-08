@@ -1,0 +1,11 @@
+.notification-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff6329;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-weight: 500;
+}
